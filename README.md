@@ -1,6 +1,6 @@
 Python 3 helper script to modify CaasP v3 KVM disk image using libguestfs library
 
-execute and enter KVM dis image name - example:
+execute and enter KVM disk image name - example:
 
   python3 modify-kvm-disk-image.py
 
