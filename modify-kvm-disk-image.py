@@ -163,12 +163,6 @@ os.remove("/tmp/ifcfg-eth0")
 print('File "/tmp/ifcfg-eth0" uploaded!')
 print()
 
-# 3- re-create empty /etc/machine-id used in /etc/salt/minion.d/minion_id.conf
-g.rm("/etc/machine-id")
-g.touch("/etc/machine-id")
-print('File "/etc/machine-id" re-created!')
-print()
-
 # set btrfs subvolume readonly flag back to "true"
 g.btrfs_subvolume_show("/")
 g.sh("btrfs property set -ts / ro true")
@@ -182,10 +176,16 @@ g.umount_all ()
 
 ###
 
-# 4- !! different subvolume !! - create /etc/hostname file inside the KVM domain image
+# 3- !! different subvolume !! - create /etc/hostname file inside the KVM domain image
 g.mount_options("rw,relatime,space_cache,subvol=/@/var/lib/overlay", root, "/")
 g.write("/etc/hostname", domname)
 print('File "/etc/hostname" created!')
+print()
+
+# 4- re-create empty /etc/machine-id used in /etc/salt/minion.d/minion_id.conf
+g.rm("/etc/machine-id")
+g.touch("/etc/machine-id")
+print('File "/etc/machine-id" re-created!')
 print()
 
 ###
