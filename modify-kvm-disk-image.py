@@ -166,6 +166,7 @@ print()
 # 3- re-create empty /etc/machine-id used in /etc/salt/minion.d/minion_id.conf
 g.rm("/etc/machine-id")
 g.touch("/etc/machine-id")
+print('File "/etc/machine-id" re-created!')
 
 # set btrfs subvolume readonly flag back to "true"
 g.btrfs_subvolume_show("/")
