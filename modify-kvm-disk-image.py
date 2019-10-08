@@ -167,8 +167,6 @@ print()
 g.rm("/etc/machine-id")
 g.touch("/etc/machine-id")
 
-
-
 # set btrfs subvolume readonly flag back to "true"
 g.btrfs_subvolume_show("/")
 g.sh("btrfs property set -ts / ro true")
