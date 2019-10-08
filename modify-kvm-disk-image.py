@@ -167,6 +167,7 @@ print()
 g.rm("/etc/machine-id")
 g.touch("/etc/machine-id")
 print('File "/etc/machine-id" re-created!')
+print()
 
 # set btrfs subvolume readonly flag back to "true"
 g.btrfs_subvolume_show("/")
