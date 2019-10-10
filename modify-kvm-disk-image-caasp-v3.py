@@ -176,13 +176,13 @@ g.umount_all ()
 
 ###
 
-# 3- !! different subvolume !! - create /etc/hostname file inside the KVM domain image
+# 4- !! different subvolume !! - create /etc/hostname file inside the KVM domain image
 g.mount_options("rw,relatime,space_cache,subvol=/@/var/lib/overlay", root, "/")
 g.write("/etc/hostname", domname)
 print('File "/etc/hostname" created!')
 print()
 
-# 4- re-create empty /etc/machine-id used in /etc/salt/minion.d/minion_id.conf
+# 3- re-create empty /etc/machine-id used in /etc/salt/minion.d/minion_id.conf
 g.rm("/etc/machine-id")
 g.touch("/etc/machine-id")
 print('File "/etc/machine-id" re-created!')
