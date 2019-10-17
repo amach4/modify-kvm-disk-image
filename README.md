@@ -1,7 +1,7 @@
 
-Python 3 helper script to modify CaasP v3 KVM disk image using libguestfs library
+Python 3 helper script to modify SUSE CaasP v3 KVM disk image using libguestfs library
 
-execute python script and enter KVM disk image name - example:
+- execute python script and enter KVM disk image name - example:
 
 :~>  python3 modify-kvm-disk-image.py
 
@@ -9,7 +9,7 @@ execute python script and enter KVM disk image name - example:
 
 ---
  
-start KVM domain and verify timestamps of new files:
+- start KVM domain and verify timestamps of new files:
 
   caasp-07:~ # ls -al /etc/hosts
   -rw-r--r-- 1 root root 686 Oct  8 08:48 /etc/hosts
